@@ -6879,7 +6879,7 @@ button.close {
     <body>
         <div class="container">
 
-            <h1 class="text-center">Mnemonic Code Converter</h1>
+            <h1 class="text-center">Electrum Seed Converter</h1>
             <p class="version">v0.3.9</p>
             <hr>
             <div class="row">
@@ -6889,10 +6889,10 @@ button.close {
                         <div class="form-group">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-10">
-                                <p>You can enter an existing BIP39 mnemonic, or generate a new random one. Typing your own twelve words will probably not work how you expect, since the words require a particular structure (the last word is a checksum).</p>
+                                <p>You can enter an existing Electrum seed phrase, or generate a new random one. Typing your own twelve words will probably not work how you expect, since the words require a particular structure.</p>
                                 <p>
                                     For more info see the
-                                    <a href="https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki" target="_blank">BIP39 spec</a>.
+                                    <a href="https://electrum.readthedocs.io/en/latest/seedphrase.html" target="_blank">Electrum seed spec</a>.
                                 </p>
                             </div>
                         </div>
@@ -7032,19 +7032,19 @@ button.close {
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="phrase" class="col-sm-2 control-label">BIP39 Mnemonic</label>
+                            <label for="phrase" class="col-sm-2 control-label">Electrum v2.0+ Seed</label>
                             <div class="col-sm-10">
                                 <textarea id="phrase" class="phrase private-data form-control" data-show-qr=""></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="passphrase" class="col-sm-2 control-label">BIP39 Passphrase (optional)</label>
+                            <label for="passphrase" class="col-sm-2 control-label">Passphrase (Seed Phrase Extension)</label>
                             <div class="col-sm-10">
                                 <textarea id="passphrase" class="passphrase private-data form-control"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="seed" class="col-sm-2 control-label">BIP39 Seed</label>
+                            <label for="seed" class="col-sm-2 control-label">Binary Seed</label>
                             <div class="col-sm-10">
                                 <textarea id="seed" class="seed private-data form-control" readonly="readonly" data-show-qr=""></textarea>
                             </div>
@@ -7085,7 +7085,7 @@ button.close {
                         <li id="bip32-tab">
                             <a href="https://iancoleman.io/bip39/#bip32" role="tab" data-toggle="tab">BIP32</a>
                         </li>
-                        <li id="bip44-tab" class="active">
+                        <li id="bip44-tab">
                             <a href="https://iancoleman.io/bip39/#bip44" role="tab" data-toggle="tab">BIP44</a>
                         </li>
                         <li id="bip49-tab">
@@ -7094,12 +7094,12 @@ button.close {
                         <li id="bip84-tab">
                             <a href="https://iancoleman.io/bip39/#bip84" role="tab" data-toggle="tab">BIP84</a>
                         </li>
-                        <li id="bip141-tab">
+                        <li id="bip141-tab" class="active">
                             <a href="https://iancoleman.io/bip39/#bip141" role="tab" data-toggle="tab">BIP141</a>
                         </li>
                     </ul>
                     <div class="derivation-type tab-content">
-                        <div id="bip44" class="tab-pane active">
+                        <div id="bip44" class="tab-pane">
                             <form class="form-horizontal" role="form">
                                 <br>
                                 <div class="col-sm-2"></div>
@@ -7340,7 +7340,7 @@ button.close {
                                 </div>
                             </form>
                         </div>
-                        <div id="bip141" class="tab-pane">
+                        <div id="bip141" class="tab-pane active">
                             <form class="form-horizontal" role="form">
                                 <br>
                                 <div class="unavailable hidden">
@@ -7362,15 +7362,15 @@ button.close {
                                     <div class="form-group">
                                         <label for="bip141-path" class="col-sm-2 control-label">BIP32 Derivation Path</label>
                                         <div class="col-sm-10">
-                                            <input id="bip141-path" type="text" class="bip141-path form-control" value="m/0">
+                                            <input id="bip141-path" type="text" class="bip141-path form-control" value="m/0'/0">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-2 control-label">Script Semantics</label>
                                         <div class="col-sm-10">
                                             <select class="form-control bip141-semantics">
-                                                <option value="p2wpkh">P2WPKH</option>
-                                                <option value="p2wpkh-p2sh" selected="">P2WPKH nested in P2SH</option>
+                                                <option value="p2wpkh" selected="">P2WPKH</option>
+                                                <option value="p2wpkh-p2sh">P2WPKH nested in P2SH</option>
                                             </select>
                                         </div>
                                     </div>
@@ -7470,13 +7470,13 @@ button.close {
                     </div>
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
-                            <label for="extended-priv-key" class="col-sm-2 control-label">BIP32 Extended Private Key</label>
+                            <label for="extended-priv-key" class="col-sm-2 control-label">Electrum Master Private Key</label>
                             <div class="col-sm-10">
                                 <textarea id="extended-priv-key" class="extended-priv-key private-data form-control" readonly="readonly" data-show-qr=""></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="extended-pub-key" class="col-sm-2 control-label">BIP32 Extended Public Key</label>
+                            <label for="extended-pub-key" class="col-sm-2 control-label">Electrum Master Public Key</label>
                             <div class="col-sm-10">
                                 <textarea id="extended-pub-key" class="extended-pub-key form-control" readonly="readonly" data-show-qr=""></textarea>
                             </div>
@@ -104371,8 +104371,9 @@ var Mnemonic = function(language) {
         passphrase = passphrase || '';
         mnemonic = self.joinWords(self.splitWords(mnemonic)); // removes duplicate blanks
         var mnemonicNormalized = self.normalizeString(mnemonic);
-        passphrase = self.normalizeString(passphrase)
-        passphrase = "electrum" + passphrase;
+		passphrase = self.joinWords(self.splitWords(passphrase));
+        passphrase = self.normalizePassphrase(passphrase)
+		passphrase = "electrum" + passphrase;
         var mnemonicBits = sjcl.codec.utf8String.toBits(mnemonicNormalized);
         var passphraseBits = sjcl.codec.utf8String.toBits(passphrase);
         var result = sjcl.misc.pbkdf2(mnemonicBits, passphraseBits, PBKDF2_ROUNDS, 512, hmacSHA512);
@@ -104396,6 +104397,14 @@ var Mnemonic = function(language) {
 
     self.normalizeString = function(str) {
         return str.normalize("NFKD");
+    }
+	
+    self.normalizePassphrase = function(str) {
+		var normalized = str.normalize("NFKD");
+	//	var combine = normalized.replace(/\s+/g, '');
+	//	return combine.toLowerCase();
+		var removeaccent = normalized.replace(/[\u0300-\u036f]/g, "");
+		return removeaccent.toLowerCase();
     }
 
     function byteArrayToWordArray(data) {
