@@ -6889,20 +6889,20 @@ button.close {
                         <div class="form-group">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-10">
-                                <p>You can enter an existing Electrum seed phrase, or generate a new random one. Typing your own twelve words will probably not work how you expect, since the words require a particular structure.</p>
+                                <p>You can enter an existing English Electrum seed phrase, CJK languages will not work.<br>Typing your own twelve words isn't recommended since it doesn't check for the correct "version number" so any combination will work even if it's invalid.<br>The "generate" button is hidden in this fork.</p>
                                 <p>
-                                    For more info see the
-                                    <a href="https://electrum.readthedocs.io/en/latest/seedphrase.html" target="_blank">Electrum seed spec</a>.
+                                    For more info see 
+                                    <a href="https://electrum.readthedocs.io/en/latest/seedphrase.html" target="_blank">Electrum seed spec.</a><br>
                                 </p>
                             </div>
                         </div>
-                        <div class="form-group generate-container">
+                        <div class="form-group generate-container" style="display: none;">
                             <label class="col-sm-2 control-label"></label>
                             <div class="col-sm-10">
                                 <div class="form-inline">
                                     <div class="input-group-inline">
                                          <span>Generate a random mnemonic</span>:
-                                        <button class="btn generate"><b>GENERATE</b></button> 
+                                        <button class="btn generate" disabled><b>GENERATE</b></button> 
                                         <select id="strength" class="strength form-control">
                                             <option value="3">3</option>
                                             <option value="6">6</option>
@@ -6998,7 +6998,7 @@ button.close {
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display: none;">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-10 checkbox">
                                 <label>
@@ -7016,23 +7016,23 @@ button.close {
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display: none;">
                             <label class="col-sm-2 control-label">Mnemonic Language</label>
                             <div class="col-sm-10 languages">
                                 <div class="form-control no-border">
-                                    <a href="https://iancoleman.io/bip39/#english">English</a>
-                                    <a href="https://iancoleman.io/bip39/#japanese" title="Japanese">日本語</a>
-                                    <a href="https://iancoleman.io/bip39/#spanish" title="Spanish">Español</a>
-                                    <a href="https://iancoleman.io/bip39/#chinese_simplified" title="Chinese (Simplified)">中文(简体)</a>
-                                    <a href="https://iancoleman.io/bip39/#chinese_traditional" title="Chinese (Traditional)">中文(繁體)</a>
-                                    <a href="https://iancoleman.io/bip39/#french" title="French">Français</a>
-                                    <a href="https://iancoleman.io/bip39/#italian" title="Italian">Italiano</a>
-                                    <a href="https://iancoleman.io/bip39/#korean" title="Korean">한국어</a>
+                                    <a href="#/#english">English</a>
+                                    <a href="#/#japanese" title="Japanese">日本語</a>
+                                    <a href="#/#spanish" title="Spanish">Español</a>
+                                    <a href="#/#chinese_simplified" title="Chinese (Simplified)">中文(简体)</a>
+                                    <a href="#/#chinese_traditional" title="Chinese (Traditional)">中文(繁體)</a>
+                                    <a href="#/#french" title="French">Français</a>
+                                    <a href="#/#italian" title="Italian">Italiano</a>
+                                    <a href="#/#korean" title="Korean">한국어</a>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="phrase" class="col-sm-2 control-label">Electrum v2.0+ Seed</label>
+                            <label for="phrase" class="col-sm-2 control-label">Electrum v2.0+ Seed (English only)</label>
                             <div class="col-sm-10">
                                 <textarea id="phrase" class="phrase private-data form-control" data-show-qr=""></textarea>
                             </div>
@@ -7049,7 +7049,7 @@ button.close {
                                 <textarea id="seed" class="seed private-data form-control" readonly="readonly" data-show-qr=""></textarea>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display: none;">
                             <label for="network-phrase" class="col-sm-2 control-label">Coin</label>
                             <div class="col-sm-10">
                                 <select id="network-phrase" class="network form-control">
@@ -7083,19 +7083,19 @@ button.close {
                     <h2>Derivation Path</h2>
                     <ul class="derivation-type nav nav-tabs" role="tablist">
                         <li id="bip32-tab">
-                            <a href="https://iancoleman.io/bip39/#bip32" role="tab" data-toggle="tab">BIP32</a>
+                            <a href="https://iancoleman.io/bip39/#bip32" role="tab" data-toggle="tab">Legacy</a>
                         </li>
                         <li id="bip44-tab">
-                            <a href="https://iancoleman.io/bip39/#bip44" role="tab" data-toggle="tab">BIP44</a>
+                            <a href="https://iancoleman.io/bip39/#bip44" role="tab" data-toggle="tab" style="display: none;">BIP44</a>
                         </li>
                         <li id="bip49-tab">
-                            <a href="https://iancoleman.io/bip39/#bip49" role="tab" data-toggle="tab">BIP49</a>
+                            <a href="https://iancoleman.io/bip39/#bip49" role="tab" data-toggle="tab" style="display: none;">BIP49</a>
                         </li>
                         <li id="bip84-tab">
-                            <a href="https://iancoleman.io/bip39/#bip84" role="tab" data-toggle="tab">BIP84</a>
+                            <a href="https://iancoleman.io/bip39/#bip84" role="tab" data-toggle="tab" style="display: none;">BIP84</a>
                         </li>
                         <li id="bip141-tab" class="active">
-                            <a href="https://iancoleman.io/bip39/#bip141" role="tab" data-toggle="tab">BIP141</a>
+                            <a href="https://iancoleman.io/bip39/#bip141" role="tab" data-toggle="tab">SegWit</a>
                         </li>
                     </ul>
                     <div class="derivation-type tab-content">
@@ -7185,11 +7185,11 @@ button.close {
                                 <div class="col-sm-2"></div>
                                 <div class="col-sm-10">
                                     <p>
-                                        For more info see the
-                                        <a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki" target="_blank">BIP32 spec</a>
+                                        For older Electrum Legacy Wallets, but not old seed type.<br>
+										<b>Note</b>: Use <u>m/1</u> derivation path to derive the change addresses.
                                     </p>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="display: none;">
                                     <label for="bip32-client" class="col-sm-2 control-label">Client</label>
                                     <div class="col-sm-10">
                                         <select id="bip32-client" class="client form-control">
@@ -7204,14 +7204,14 @@ button.close {
                                         <input id="bip32-path" type="text" class="path form-control" value="m/0">
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="display: none;">
                                     <div class="col-sm-2"></div>
                                     <label class="col-sm-10">
                                         <input class="hardened-addresses" type="checkbox">
                                         <span>Use hardened addresses</span>
                                     </label>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="display: none;">
                                     <label for="core-path" class="col-sm-2 control-label">Bitcoin Core</label>
                                     <div class="col-sm-10">
                                         <p class="form-control no-border">
@@ -7223,7 +7223,7 @@ button.close {
                                         </p>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="display: none;">
                                     <label for="core-path" class="col-sm-2 control-label">Multibit</label>
                                     <div class="col-sm-10">
                                         <p class="form-control no-border">
@@ -7235,7 +7235,7 @@ button.close {
                                         </p>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" style="display: none;">
                                     <label class="col-sm-2 control-label">Block Explorers</label>
                                     <div class="col-sm-10">
                                         <p class="form-control no-border">
@@ -7355,8 +7355,8 @@ button.close {
                                     <div class="col-sm-2"></div>
                                     <div class="col-sm-10">
                                         <p>
-                                            For more info see the
-                                            <a href="https://github.com/bitcoin/bips/blob/master/bip-0141.mediawiki" target="_blank">BIP141 spec</a>
+                                            For Electrum SegWit Wallets<br>
+											<b>Note</b>: Use <u>m/0'/1</u> derivation path to derive the change addresses.
                                         </p>
                                     </div>
                                     <div class="form-group">
@@ -7365,12 +7365,11 @@ button.close {
                                             <input id="bip141-path" type="text" class="bip141-path form-control" value="m/0'/0">
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" style="display: none;">
                                         <label class="col-sm-2 control-label">Script Semantics</label>
                                         <div class="col-sm-10">
                                             <select class="form-control bip141-semantics">
                                                 <option value="p2wpkh" selected="">P2WPKH</option>
-                                                <option value="p2wpkh-p2sh">P2WPKH nested in P2SH</option>
                                             </select>
                                         </div>
                                     </div>
@@ -7470,13 +7469,13 @@ button.close {
                     </div>
                     <form class="form-horizontal" role="form">
                         <div class="form-group">
-                            <label for="extended-priv-key" class="col-sm-2 control-label">Electrum Master Private Key</label>
+                            <label for="extended-priv-key" class="col-sm-2 control-label">Extended Private Key</label>
                             <div class="col-sm-10">
                                 <textarea id="extended-priv-key" class="extended-priv-key private-data form-control" readonly="readonly" data-show-qr=""></textarea>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="extended-pub-key" class="col-sm-2 control-label">Electrum Master Public Key</label>
+                            <label for="extended-pub-key" class="col-sm-2 control-label">Extended Public Key</label>
                             <div class="col-sm-10">
                                 <textarea id="extended-pub-key" class="extended-pub-key form-control" readonly="readonly" data-show-qr=""></textarea>
                             </div>
@@ -7588,7 +7587,7 @@ button.close {
 
             <div class="row">
                 <div class="col-md-12">
-                    <h2>More info</h2>
+                    <h2>More info (Orignal BIP39 tool notes)</h2>
                     <h3>BIP39 <span class="small">Mnemonic code for generating deterministic keys</span></h3>
                     <p>
                         Read more at the
